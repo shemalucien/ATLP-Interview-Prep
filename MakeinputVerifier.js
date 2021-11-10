@@ -18,10 +18,10 @@ function vowelcount(str) {
       if (vowels.indexOf(str[i].toLowerCase()) > -1) {
          count++;
       }
-
    }
    return "This string has " + count + " Vowels";
 }
+
 
 function titlecase(str) {
    var arr = str.toLowerCase().split(" ");
@@ -34,6 +34,7 @@ function titlecase(str) {
    return result.join(" ");
 }
 
+
 function getIndexofnumber(arr, num) {
    arr.sort(function (a, b) {
       return a - b;
@@ -45,6 +46,8 @@ function getIndexofnumber(arr, num) {
    }
    return arr.length;
 }
+
+
 function Removeitem(arr) {
    var args = Array.from(arguments);
 
@@ -57,6 +60,7 @@ function Removeitem(arr) {
    }
    return arr.filter(Boolean);
 }
+
 
 function findLongestword(str) {
    var words = str.split(" ");
@@ -73,6 +77,8 @@ function findLongestword(str) {
    return longestword;
 }
 
+
+
 function chunkArray(arr, val) {
    var finalArray = [];
    for (var i = 0; i < arr.length; i += val) {
@@ -80,6 +86,9 @@ function chunkArray(arr, val) {
    }
    return finalArray;
 }
+
+
+
 function reverseStr(str) {
    var finalstr = "";
    for (var i = str.length; i >= 0; i--) {
@@ -87,6 +96,7 @@ function reverseStr(str) {
    }
    return finalstr;
 }
+
 
 function mutations(arr) {
    var firstItem = arr[0].toLowerCase();
@@ -99,6 +109,20 @@ function mutations(arr) {
    return true;
 }
 
+
+function fibonacci(nums)
+ {
+   let fib = [0, 1];
+   let data = [];
+   for (let i = 2; i <= nums; i++) {
+      fib[i] = fib[i - 1] + fib[i - 2];
+      if ((fib[i] % 2 == 0) && (fib[i] < 10)) {
+         data.push(fib[i]);
+      }
+   }
+   return data;
+}
+
 const ans = makeInputVerifier(1, 10)
 console.log(ans(5))
 console.log(vowelcount("shema lucien studies in cse"));
@@ -109,3 +133,4 @@ console.log(findLongestword("shema lucien is studying in cse"));
 console.log(chunkArray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 console.log(reverseStr("Reverse this string"));
 console.log(mutations(["Miss", "Miss"]));
+console.log(fibonacci(10));

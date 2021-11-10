@@ -1,39 +1,24 @@
 function Inventorylist() {
-	let items = []
-	const add = (name) => {
-		const names = items.filter(item => item.name === name)
-		if (names.length === 0) {
-			items.push({ name: name })
-			console.log("added", name, names);
+	return {
+		itemsCollection: [],
+		add: function (name) {
+			const index = this.itemsCollection.indexOf(name);
+			if (index === -1)
+				this.itemsCollection.push(name);
+		},
+		remove: function (name) {
+			const index = this.itemsCollection.indexOf(name);
+			if (index > -1)
+				this.itemsCollection.splice(index, 1);
+		},
+		getList: function () {
+			return this.itemsCollection;
 		}
-	}
-	const remove = (name) => {
-		items = items.filter(item => item.name !== name);
-		if (name.length != 0) {
-			const index = items.findIndex(i => i == name);
-			items.splice(index, 1);
-		}
-		const getList = () => {
-			console.log(items);
-			return items
-
-		}
-
-		items.getList()
-		items.add('Shema')
-		items.getList()
-		items.add('Lucien')
-		items.getList()
-		items.remove('Shema')
-		items.getList()
-		items.add('jeande')
-		items.getList()
-		items.add('shema')
-		items.getList()
-
-		return { add, remove, getList }
-
-
 	}
 }
-items.Inventorylist()
+console.log(Inventorylist.add('shema'));
+// console.log(add(lucien));
+// console.log(add(placide));
+// console.log(remove(shema));
+console.log(Inventorylist.getList());
+

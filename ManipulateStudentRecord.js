@@ -1,4 +1,5 @@
-function manipulateStudentRecord(obj, operation, prop, newValue) {
+function manipulateStudentRecord(obj, operation, prop, newValue)
+ {
     if(operation === 'delete') {
       if(obj && obj.hasOwnProperty(prop)){
         delete obj[prop]
@@ -14,11 +15,13 @@ function manipulateStudentRecord(obj, operation, prop, newValue) {
       }
     }
   }
+
   const obj = {
     name: 'John',
     lastName: 'Bliss',
     city: 'Florida'
   }
+  
   console.log(manipulateStudentRecord(obj, "edit", "city", "Seattle"))
   console.log(manipulateStudentRecord(obj, "edit", "abc", "Seattle"))
   console.log(manipulateStudentRecord(obj, "delete", "city", "Seattle"))
